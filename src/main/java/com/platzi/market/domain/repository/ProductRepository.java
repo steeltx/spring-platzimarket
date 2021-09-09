@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface ProductRepository {
 
-    List<Product> gellAll();
+    List<Product> getAll();
     Optional<List<Product>> getByCategoryId(int category);
     Optional<List<Product>> getScarseProducts(int quantity);
     Optional<Product> getProduct(int productId);
