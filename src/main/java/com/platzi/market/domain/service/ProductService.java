@@ -14,22 +14,46 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
+    /**
+     * Obtener todos los registros
+     * @return Lista de registros
+     */
     public List<Product> getAll(){
         return productRepository.getAll();
     }
 
+    /**
+     * Obtener un registro
+     * @param productId
+     * @return registro
+     */
     public Optional<Product> getProduct(int productId){
         return productRepository.getProduct(productId);
     }
 
+    /**
+     * Obtener registros por categoria
+     * @param categoryId
+     * @return Lista de registros
+     */
     public Optional<List<Product>> getByCategory (int categoryId){
         return productRepository.getByCategoryId(categoryId);
     }
 
+    /**
+     * Guardar un registro
+     * @param product
+     * @return registro
+     */
     public Product save(Product product){
         return productRepository.save(product);
     }
 
+    /**
+     * Eliminar un registro
+     * @param productId
+     * @return boolean
+     */
     public boolean delete(int productId){
         // si existe el producto, se elimina
         return getProduct(productId).map(product -> {
